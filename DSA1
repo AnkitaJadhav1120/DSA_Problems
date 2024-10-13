@@ -41,4 +41,33 @@ class Solution {
 }
             
  T.C = O(n)
- S.C = O(1) 
+ S.C = O(1)
+
+// Remove the outermost parenthesis in the given string
+Eg: str = "(()())((()))"
+o/p : str = "()()(())"
+class Solution {
+    public String removeOuterParentheses(String s) {
+        int len = s.length();
+        char c[] = s.toCharArray();
+        StringBuilder sb = new StringBuilder("");
+        Stack<Character> s1 = new Stack<>();
+        for(int i =0;i <len;i++){
+            if(c[i] == '('){
+                if(!s1.isEmpty()){
+                    sb.append('(');
+                }
+                s1.push(c[i]);
+            }
+            else{
+                s1.pop();
+                if(!s1.isEmpty()){
+                    sb.append(')');
+                }
+            }
+        }
+        return sb.toString();
+    }
+}
+T.C = O(n)
+S.C = O(n)
