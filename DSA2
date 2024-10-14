@@ -1,4 +1,6 @@
-import java.util.Arrays;
+// sort 0's ,1's and 2's
+Input: nums = [2,0,2,1,1,0]
+Output: [0,0,1,1,2,2]
 
 class Solution {
     
