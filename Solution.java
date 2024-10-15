@@ -1,0 +1,22 @@
+class Solution {
+
+    // Function to find floor of x
+    // arr: input array
+    // n is the size of array
+    static int findFloor(long arr[], int n, long x) {
+        int s =0;
+        int e = arr.length -1;
+        
+        while(s <= e){
+            int mid = s + (e -s)/2;
+            if(arr[mid] == x){
+                return mid ;
+            }else if( arr[mid] < x){
+                s = mid +1;
+            }else if(arr[mid] > x){
+                e = mid -1;
+            }
+        }
+        return e;
+    }
+}
