@@ -1,0 +1,17 @@
+//Check if the array is rotated and sorted
+Approach : Iterate through the array , check if the previous element is greater then the next , if this occurs more then once the array is not sorted.
+class Solution {
+    public boolean check(int[] nums) {
+        int count = 0;
+        int n = nums.length;
+        for(int i = 0;i < nums.length;i++){
+            if(nums[i] > nums[(i+1) % n]){
+                count++;
+            }
+        }
+        if(count > 1){
+            return false;
+        }
+        return true;
+    }
+}
